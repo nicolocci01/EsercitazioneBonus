@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:background="@color/grey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:text="Accesso"
+                android:textAlignment="center"
+                android:background="@color/teal_700"
+                android:textColor="@color/white"
+                android:textSize="36dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Credenziali errate"
+                android:id="@+id/errorText"
+                android:textSize="24dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:background="@color/red"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Username"
+                android:textSize="36dp"/>
+
+            <EditText
+                android:id="@+id/attrUsernameLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
+                android:hint="Inserire Username"
+                android:text=""
+                android:textAlignment="center"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Password"
+                android:textSize="36dp"/>
+
+            <EditText
+                android:id="@+id/attrPasswordLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
+                android:hint="Inserire Password"
+                android:inputType="textPassword"
+                android:text=""
+                android:textAlignment="center"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:focusable="true"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:paddingStart="33dp"
+                android:paddingEnd="33dp"
+                android:backgroundTint="@color/darkGreen"
+                android:text="Accedi"
+                android:id="@+id/login"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:id="@+id/registrati"
+                android:textColor="@color/blue"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
