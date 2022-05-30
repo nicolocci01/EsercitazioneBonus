@@ -15,7 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     Button loginButton; //registerButton;
     TextView registrati;
     EditText username, password;
-    Utente persona;
+    Utente utente;
     Boolean loginFlag = false;
     public static String PERSONA_EXTRA= "com.example.esercitazioneBonus.Persona";
 
@@ -37,15 +37,21 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent();
                 for(Utente u : Utente.listaUtenti){
                     if(username.getText().toString().equals(u.getUsername()) && password.getText().toString().equals(u.getPassword())){
                         loginFlag=true;
-                        persona=u;
+                        utente =u;
                         break;
                     }
                 }
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                Utente.utenteCorrente = persona;
+                if(utente.getUsername().equals("admin")) {
+                    intent = new Intent(LoginActivity.this,HomeActivity.class); //TODO: cambiare quando ci sarà l'activity lista
+                }else{
+                    intent = new Intent(LoginActivity.this, HomeActivity.class);
+                }
+
+                Utente.utenteCorrente = utente;
                 startActivity(intent);
             }
         });
