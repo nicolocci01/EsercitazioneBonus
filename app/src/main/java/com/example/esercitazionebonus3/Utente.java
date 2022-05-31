@@ -82,4 +82,26 @@ public class Utente implements Serializable {
         this.adminPrivilege = false;
     }
 
+    public boolean equals(Utente u){
+        if(this.username.equals(u.username)){
+            if(this.password.equals(u.password)){
+                if(this.data.equals(u.data)){
+                    if(this.citta.equals(u.citta)){
+                        if(this.adminPrivilege == u.adminPrivilege){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean equals(String username){
+        if (this.username.equals(username))
+            return true;
+
+        return false;
+    }
+
 }

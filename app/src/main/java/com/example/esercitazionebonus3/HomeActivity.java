@@ -29,16 +29,10 @@ public class HomeActivity extends AppCompatActivity {
         logout = findViewById(R.id.logout);
         modificaPassword = findViewById(R.id.modifica);
 
-        Intent intent = getIntent();
-        Serializable obj = intent.getSerializableExtra(RegistrazioneActivity.PERSONA_EXTRA);    //recuperiamo la nostra persona
-
-        //da sostituire, causa nullpoiner, giustamente anche
-        utenteRicevuto = Utente.utenteCorrente;
-
-        benvenuto.setText("Benvenuto " + utenteRicevuto.getUsername().trim());
-        username.setText(utenteRicevuto.getUsername());
-        dataText.setText(utenteRicevuto.getData());
-        cittaText.setText(utenteRicevuto.getCitta());
+        benvenuto.setText("Benvenuto " + Utente.utenteCorrente.getUsername().trim());
+        username.setText(Utente.utenteCorrente.getUsername());
+        dataText.setText(Utente.utenteCorrente.getData());
+        cittaText.setText(Utente.utenteCorrente.getCitta());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

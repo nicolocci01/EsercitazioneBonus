@@ -24,8 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
+                android:layout_marginHorizontal="18dp"
                 android:text="Registrazione"
                 android:textAlignment="center"
                 android:background="@color/teal_700"
@@ -35,6 +34,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="18dp"
                 android:text="ERRORE"
                 android:id="@+id/errorText"
                 android:textSize="30dp"
@@ -57,6 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Inserire Username"
+                android:maxLines="1"
                 android:text=""
                 android:id="@+id/attrUsername"/>
 
@@ -67,6 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:text="Password:"
                 android:textSize="36dp"/>
 
@@ -74,6 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Inserire Password"
+                android:maxLines="1"
+                android:maxLength="16"
                 android:text=""
                 android:inputType="textPassword"
                 android:id="@+id/attrPassword"/>
@@ -88,6 +93,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Confermare Password"
+                android:maxLines="1"
+                android:maxLength="16"
                 android:text=""
                 android:inputType="textPassword"
                 android:id="@+id/attrConfermaPassword"/>
@@ -106,6 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Inserire città di provenienza"
+                android:maxLines="1"
                 android:text=""
                 android:id="@+id/attrCitta"/>
 
@@ -123,12 +131,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:maxLines="1"
                 android:hint="Inserire data di nascita"
                 android:id="@+id/attrData"/>
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:focusable="true"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:paddingStart="33dp"
+                android:paddingEnd="33dp"
+                android:backgroundTint="@color/darkGreen"
+                android:text="Indietro"
+                android:id="@+id/backReg"/>
 
             <Button
                 android:layout_width="wrap_content"

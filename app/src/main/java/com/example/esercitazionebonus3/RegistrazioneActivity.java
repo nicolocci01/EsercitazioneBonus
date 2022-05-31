@@ -23,10 +23,10 @@ import java.util.Calendar;
 public class RegistrazioneActivity extends AppCompatActivity {
 
     EditText usernameText, passwordText, dataText, confermaPasswordText, cittaText;
-    Button registerButton, pulisciButton;
+    Button registerButton, pulisciButton, back;
     Utente utente;
     TextView errorText;
-    static String PERSONA_EXTRA = "com.example.esercitazioneBonus.Persona";
+    //static String PERSONA_EXTRA = "com.example.esercitazioneBonus.Persona";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
         dataText = findViewById(R.id.attrData);
         registerButton = findViewById(R.id.salvaButton);
         errorText = findViewById(R.id.errorText);
+        back = findViewById(R.id.backReg);
         pulisciButton = findViewById(R.id.cleanButton);
 
         utente = new Utente();
@@ -48,13 +49,13 @@ public class RegistrazioneActivity extends AppCompatActivity {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if(hasFocus) {
-                    //non fa uscire la tastiera
+
                     dataText.setRawInputType(InputType.TYPE_NULL);
                     dataText.setFocusable(true);
                     new DatePickerFragment().show(
                             getSupportFragmentManager(), DatePickerFragment.TAG);
 
-                    // per non dover cambiare focus prima di ricliccare
+
                     dataText.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -66,6 +67,13 @@ public class RegistrazioneActivity extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -82,18 +90,20 @@ public class RegistrazioneActivity extends AppCompatActivity {
                         Utente.utenteCorrente = utente;
                         startActivity(intent);
                     }else{
-                        errorText.setText("");
+                        errorText.setText("Nome utente già presente");
                     }
                 }
             }
         });
 
         pulisciButton.setOnClickListener(new View.OnClickListener() {
-            @Override   //meglio fare getText().clear(), vale per tutti i tipi
+            @Override
             public void onClick(View view) {
                 usernameText.setText("");
                 passwordText.setText("");
+                confermaPasswordText.setText("");
                 dataText.setText("");
+                cittaText.setText("");
             }
         });
     }
@@ -105,23 +115,27 @@ public class RegistrazioneActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private boolean checkInput(){
-        //return true se tutto è andato a buon fine, false altrimenti
         int errors=0;
 
         if(usernameText.getText().toString().length()==0){
             errors++;
-            usernameText.setError("Inserire il nome utente!");
+            usernameText.setError("Inserire il nome utente");
         }
         if(passwordText.getText().toString().length()==0){
             errors++;
-            passwordText.setError("Inserire la password!");
+            passwordText.setError("Inserire la password");
         }
         if(confermaPasswordText.getText().toString().length()==0){
             errors++;
-            confermaPasswordText.setError("Inserire la password!");
+            confermaPasswordText.setError("Inserire la password");
         }else if(!confermaPasswordText.getText().toString().equals(passwordText.getText().toString())){
             errors++;
             confermaPasswordText.setError("Le password non coincidono");
+        }
+        if (!passwordText.getText().toString().matches("^(?=.*[0-9])(?=.*[a-z])(?=\\S+$)(?=.*[A-Z])(?=.*[!@#&()–:;',?/*~$^+=<>]).{8,16}$")){
+            errors++;
+            passwordText.setError("La password deve essere lunga almeno 8 caratteri e deve contenere almeno un numero, una lettera maiuscola, " +
+                    "una minuscola e un carattere speciale, non può contenere spazi");
         }
         for (Utente p: Utente.listaUtenti) {
             if(p.getUsername().equals(usernameText.getText().toString())){
@@ -132,7 +146,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
         }
         if(dataText.getText().toString().length()==0){
             errors++;
-            dataText.setError("Inserire la data!");
+            dataText.setError("Inserire la data");
         }
         if(cittaText.getText().toString().length()==0){
             errors++;
