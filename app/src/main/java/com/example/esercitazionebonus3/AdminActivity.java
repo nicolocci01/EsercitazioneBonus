@@ -22,10 +22,22 @@ public class AdminActivity extends AppCompatActivity {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
 
+    LinearLayout.LayoutParams p2 = new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            Gravity.CENTER
+    );
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+        draw();
+    }
+
+    private void draw(){
+        p2.setMargins(0, 10, 0, 0);
 
         layout = findViewById(R.id.layout);
 
@@ -77,18 +89,16 @@ public class AdminActivity extends AppCompatActivity {
             }
         }
 
-        Button logout = new Button(this);
-        logout.setText("Logout");
-        logout.setLayoutParams(params);
-        layout.addView(logout);
+        Button home = new Button(this);
+        home.setText("Home");
+        home.setLayoutParams(p2);
+        layout.addView(home);
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                layout.removeAllViewsInLayout();
-                Utente.utenteCorrente.reset();
-                Intent intent = new Intent(AdminActivity.this, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                layout.removeAllViews();
+                Intent intent = new Intent(AdminActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
