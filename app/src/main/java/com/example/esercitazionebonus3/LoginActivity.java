@@ -28,6 +28,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Utente.listaUtenti.add(new Utente("admin", "admin", true));
+        Utente.listaUtenti.add(new Utente("pippo","pluto", false));
+        Utente.listaUtenti.add(new Utente("a","pluto", false));
+        Utente.listaUtenti.add(new Utente("b","pluto", false));
+
 
         username = findViewById(R.id.attrUsernameLogin);
         password = findViewById(R.id.attrPasswordLogin);
@@ -50,12 +54,12 @@ public class LoginActivity extends AppCompatActivity {
                         foundUsernameFlag = true;
                     }
                 }
-                if(utente.getUsername().equals("admin") && foundPasswordFlag) {
-                    intent = new Intent(LoginActivity.this, AdminActivity.class);
-                    Utente.utenteCorrente = utente;
-                    startActivity(intent);
-                }else if (foundPasswordFlag){
-                    intent = new Intent(LoginActivity.this, HomeActivity.class);
+                if(foundPasswordFlag) {
+                    if(utente.getAdminPrivilege()) {
+                        intent = new Intent(LoginActivity.this, AdminActivity.class);
+                    }else {
+                        intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    }
                     Utente.utenteCorrente = utente;
                     startActivity(intent);
                 }else{
