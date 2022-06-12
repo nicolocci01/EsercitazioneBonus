@@ -54,9 +54,6 @@ public class ModificaPasswordActivity extends AppCompatActivity {
                     Utente.listaUtenti.remove(Utente.utenteCorrente);
                     Utente.utenteCorrente.setPassword(password.getText().toString());
                     Utente.listaUtenti.add(Utente.utenteCorrente);
-                    //PopupWindow popupWindow = new PopupWindow();
-                    //popupWindow.showAtLocation(v, Gravity.CENTER,0,0);
-                    //popupWindow.setOnDismissListener();
                     Intent intent = new Intent(ModificaPasswordActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }

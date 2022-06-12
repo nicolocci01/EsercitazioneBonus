@@ -10,13 +10,6 @@ public class Utente implements Serializable {
     private String username, password, data, citta;
     private boolean adminPrivilege;
 
-    public Utente(String username, String password, String data, String citta){
-        this.username = username;
-        this.password = password;
-        this.data=data;
-        this.citta=citta;
-        this.adminPrivilege = false;
-    }
 
     public Utente(String username,String password, Boolean adminPrivilege){
         this.username = username;
@@ -72,21 +65,6 @@ public class Utente implements Serializable {
 
     public void setAdminPrivilege(boolean adminPrivilege) {
         this.adminPrivilege = adminPrivilege;
-    }
-
-    public boolean equals(Utente u){
-        if(this.username.equals(u.username)){
-            if(this.password.equals(u.password)){
-                if(this.data.equals(u.data)){
-                    if(this.citta.equals(u.citta)){
-                        if(this.adminPrivilege == u.adminPrivilege){
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
     }
 
     public boolean equals(String username){

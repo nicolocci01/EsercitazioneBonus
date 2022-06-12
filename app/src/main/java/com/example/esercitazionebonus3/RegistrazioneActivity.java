@@ -26,7 +26,6 @@ public class RegistrazioneActivity extends AppCompatActivity {
     Button registerButton, pulisciButton, back;
     Utente utente;
     TextView errorText;
-    //static String PERSONA_EXTRA = "com.example.esercitazioneBonus.Persona";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +84,6 @@ public class RegistrazioneActivity extends AppCompatActivity {
                     if(!Utente.listaUtenti.contains(utente)){
                         Intent intent = new Intent(RegistrazioneActivity.this, HomeActivity.class);
                         aggiornaPersona();
-                        //intent.putExtra(PERSONA_EXTRA, persona);
                         Utente.listaUtenti.add(utente);
                         Utente.utenteCorrente = utente;
                         startActivity(intent);

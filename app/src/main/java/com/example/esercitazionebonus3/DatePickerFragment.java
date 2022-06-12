@@ -31,7 +31,6 @@ public class DatePickerFragment extends DialogFragment {
                 .setMessage("Inserisci una data")
                 .setView(datePicker)
                 .setPositiveButton("Ok", (dialog, which) -> {
-                    //cosa succede quando premo ok?
                     date.set(Calendar.YEAR, datePicker.getYear());
                     date.set(Calendar.MONDAY, datePicker.getMonth());
                     date.set(Calendar.DAY_OF_MONTH, datePicker.getDayOfMonth());
