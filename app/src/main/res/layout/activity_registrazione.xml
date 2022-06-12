@@ -51,12 +51,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:text="Username:"
                 android:textSize="36dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:hint="Inserire Username"
                 android:maxLines="1"
                 android:text=""
@@ -69,13 +71,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/darkGrey"
                 android:text="Password:"
                 android:textSize="36dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:hint="Inserire Password"
                 android:maxLines="1"
                 android:maxLength="16"
@@ -86,12 +89,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:text="Conferma Password:"
                 android:textSize="36dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:hint="Confermare Password"
                 android:maxLines="1"
                 android:maxLength="16"
@@ -106,12 +111,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:text="Città di provenienza:"
                 android:textSize="36dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:hint="Inserire città di provenienza"
                 android:maxLines="1"
                 android:text=""
@@ -124,12 +131,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:text="Data Nascita:"
                 android:textSize="36dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/darkGrey"
                 android:text=""
                 android:maxLines="1"
                 android:hint="Inserire data di nascita"

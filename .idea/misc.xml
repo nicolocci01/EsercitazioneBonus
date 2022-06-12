@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/EsercitazioneBonus/app/src/main/res/layout/activity_admin.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/EsercitazioneBonus/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/EsercitazioneBonus/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/EsercitazioneBonus/app/src/main/res/layout/activity_modifica_password.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/EsercitazioneBonus/app/src/main/res/layout/activity_registrazione.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nicco/AndroidStudioProjects/EsercitazioneBonus3/app/src/main/res/layout/activity_admin.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/nicco/AndroidStudioProjects/EsercitazioneBonus3/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/nicco/AndroidStudioProjects/EsercitazioneBonus3/app/src/main/res/layout/activity_login.xml" value="0.1" />

@@ -29,9 +29,6 @@ public class LoginActivity extends AppCompatActivity {
 
         if (Utente.listaUtenti.isEmpty()) {
             Utente.listaUtenti.add(new Utente("admin", "admin", true));
-            Utente.listaUtenti.add(new Utente("pippo", "pluto", false));
-            Utente.listaUtenti.add(new Utente("a", "pluto", false));
-            Utente.listaUtenti.add(new Utente("b", "pluto", false));
         }
 
         username = findViewById(R.id.attrUsernameLogin);
