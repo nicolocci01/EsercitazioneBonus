@@ -16,35 +16,36 @@ import java.util.ArrayList;
 
 public class AdminActivity extends AppCompatActivity {
     ScrollView scrollView;
+    Button home;
     LinearLayout layout;
     LinearLayout.LayoutParams params =
             new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
 
-    LinearLayout.LayoutParams p2 = new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-            Gravity.CENTER
-    );
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
+        home = findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         draw();
     }
 
     private void draw(){
-        p2.setMargins(0, 10, 0, 0);
-
         layout = findViewById(R.id.layout);
 
         for (int i = 0; i < Utente.listaUtenti.size(); i++) {
             if (!Utente.listaUtenti.get(i).getAdminPrivilege()) {
-
-                layout.setOrientation(LinearLayout.VERTICAL);
 
                 TextView username = new TextView(this);
                 username.setText(Utente.listaUtenti.get(i).getUsername());
@@ -88,19 +89,5 @@ public class AdminActivity extends AppCompatActivity {
 
             }
         }
-
-        Button home = new Button(this);
-        home.setText("Home");
-        home.setLayoutParams(p2);
-        layout.addView(home);
-
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                layout.removeAllViews();
-                Intent intent = new Intent(AdminActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

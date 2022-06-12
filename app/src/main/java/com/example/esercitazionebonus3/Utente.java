@@ -74,14 +74,6 @@ public class Utente implements Serializable {
         this.adminPrivilege = adminPrivilege;
     }
 
-    public void reset(){
-        this.username = "";
-        this.password = "";
-        this.data = "";
-        this.citta = "";
-        this.adminPrivilege = false;
-    }
-
     public boolean equals(Utente u){
         if(this.username.equals(u.username)){
             if(this.password.equals(u.password)){
